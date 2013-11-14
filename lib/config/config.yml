@@ -1,0 +1,8 @@
+production: &common_settings
+    title: Sinatra Boilerplate
+
+test:
+    <<: *common_settings
+
+development:
+    <<: *common_settings
