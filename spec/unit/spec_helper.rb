@@ -5,6 +5,7 @@ require 'coveralls'
 
 coverage = ENV['COVERAGE'] || false
 
+# Only create coverage if specified to speed up guard tests
 if coverage
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
     SimpleCov::Formatter::HTMLFormatter,
