@@ -5,7 +5,7 @@ require 'rspec/core/rake_task'
 
 task default: :build
 
-task build: [:clean, :prepare, :quality]
+task build: [:clean, :prepare, :quality, :unit, :system]
 
 desc 'Runs standard build activities.'
 task build_full: [:build]

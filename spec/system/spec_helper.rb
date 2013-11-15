@@ -22,10 +22,8 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   def app
-    # require_relative '../../lib/app'
     App::Server
   end
-
 end
 
 Capybara.app = App::Server

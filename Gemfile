@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'sinatra'
-gem 'sinatra-contrib', :require => %w(sinatra/config_file)
+gem 'sinatra-contrib', require: %w(sinatra/config_file)
 gem 'thin'
 
 group :presentation do
@@ -23,6 +23,6 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-livereload'
-  gem 'guard-shotgun', :git => 'git@github.com:rchampourlier/guard-shotgun.git', :branch => 'master'
+  gem 'guard-shotgun', git: 'git@github.com:rchampourlier/guard-shotgun.git', branch: 'master'
   gem 'blam'
 end
