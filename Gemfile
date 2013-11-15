@@ -12,6 +12,9 @@ group :presentation do
 end
 
 group :test do
+  gem 'rspec'
+  gem 'coveralls'
+  gem 'capybara'
 end
 
 group :development do
@@ -20,4 +23,5 @@ group :development do
   gem 'guard-rubocop'
   gem 'guard-livereload'
   gem 'guard-shotgun', :git => 'git@github.com:rchampourlier/guard-shotgun.git', :branch => 'master'
+  gem 'blam'
 end
