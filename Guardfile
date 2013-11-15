@@ -1,27 +1,29 @@
-# Run code quality checks against all source
-guard :rubocop, all_on_start: false do
-  watch(%r{^spec/.+\.rb$})
-  watch(%r{^lib/.+\.rb$})
-  watch(%r{^.+\.(rb|ru)$})
-  watch 'Gemfile'
-  watch 'Rakefile'
-end
-
-group :unit do
-  guard :rspec do
-    watch(%r{^spec/unit/.+_spec\.rb$})
-    watch(%r{^lib/(.+)\.rb$})     { |m| "spec/unit/lib/#{m[1]}_spec.rb" }
-    watch('spec/spec_helper.rb')
-    watch('spec/unit/spec_helper.rb')
+group :tests, halt_on_fail: true do
+  # Run code quality checks against all source
+  guard :rubocop, all_on_start: false do
+    watch(%r{^spec/.+\.rb$})
+    watch(%r{^lib/.+\.rb$})
+    watch(%r{^.+\.(rb|ru)$})
+    watch 'Gemfile'
+    watch 'Rakefile'
   end
-end
 
-group :system do
-  guard :rspec, cmd: 'TEST_TYPE=system rspec' do
-    watch(%r{^spec/system/.+_spec\.rb$})
-    watch(%r{^lib/(.+)\.(rb|slim)$})     { |m| "spec/system/lib/#{m[1]}_spec.rb" }
-    watch('spec/spec_helper.rb')
-    watch('spec/system/spec_helper.rb')
+  group :unit do
+    guard :rspec do
+      watch(%r{^spec/unit/.+_spec\.rb$})
+      watch(%r{^lib/(.+)\.rb$})     { |m| "spec/unit/lib/#{m[1]}_spec.rb" }
+      watch('spec/spec_helper.rb')
+      watch('spec/unit/spec_helper.rb')
+    end
+  end
+
+  group :system do
+    guard :rspec, cmd: 'TEST_TYPE=system rspec' do
+      watch(%r{^spec/system/.+_spec\.rb$})
+      watch(%r{^lib/(.+)\.(rb|slim)$})     { |m| "spec/system/lib/#{m[1]}_spec.rb" }
+      watch('spec/spec_helper.rb')
+      watch('spec/system/spec_helper.rb')
+    end
   end
 end
 
