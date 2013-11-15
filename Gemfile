@@ -15,11 +15,12 @@ group :test do
   gem 'rspec'
   gem 'coveralls'
   gem 'capybara'
+  gem 'rubocop'
 end
 
 group :development do
   gem 'rake'
-  gem 'rubocop'
+  gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-livereload'
   gem 'guard-shotgun', :git => 'git@github.com:rchampourlier/guard-shotgun.git', :branch => 'master'

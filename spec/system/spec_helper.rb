@@ -8,6 +8,8 @@ require 'capybara/rspec'
 require 'capybara'
 require 'capybara/dsl'
 
+require_relative '../../lib/app'
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
@@ -18,9 +20,13 @@ RSpec.configure do |config|
   config.expect_with :rspec, :stdlib
   config.include Rack::Test::Methods
   config.include Capybara::DSL
-end
 
-require_relative '../../lib/app'
+  def app
+    # require_relative '../../lib/app'
+    App::Server
+  end
+
+end
 
 Capybara.app = App::Server
 

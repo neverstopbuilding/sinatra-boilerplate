@@ -49,6 +49,9 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.0)
       multi_json (~> 1.8)
+    guard-rspec (4.0.4)
+      guard (>= 2.1.1)
+      rspec (~> 2.14)
     guard-rubocop (1.0.0)
       guard (~> 2.0)
       rubocop (~> 0.10)
@@ -142,6 +145,7 @@ DEPENDENCIES
   capybara
   coveralls
   guard-livereload
+  guard-rspec
   guard-rubocop
   guard-shotgun!
   rake

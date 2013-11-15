@@ -30,6 +30,7 @@ end
 
 RSpec::Core::RakeTask.new(:unit) do |t|
   ENV['TEST_TYPE'] = 'unit'
+  ENV['COVERAGE'] = 'true'
   t.pattern = FileList['spec/unit/**/*_spec.rb']
   t.rspec_opts = get_rspec_flags('unit')
 end
