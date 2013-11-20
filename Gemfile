@@ -8,7 +8,6 @@ gem 'sinatra-contrib', require: %w(sinatra/config_file)
 gem 'thin'
 gem 'slim'
 gem 'sinatra-assetpack'
-gem 'yui-compressor'
 gem 'zurb-foundation'
 gem 'compass'
 

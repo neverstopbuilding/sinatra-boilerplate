@@ -30,20 +30,18 @@ module App
     # Assets
     assets do
       serve '/js', from: 'assets/javascripts'
-      # We serve foundation specific javascript right from the gem
-      serve '/foundation', from: Foundation.js_path
       serve '/css', from: 'assets/stylesheets'
       serve '/img', from: 'assets/images'
 
       # Javascript placed before the closing <head> tag
       js :head, [
-        '/foundation/vendor/custom.modernizr.js',
+        '/js/foundation/vendor/custom.modernizr.js',
         '/js/head.js'
       ]
 
       # Javascript placed before the closing <body> tag
       js :tail, [
-        '/foundation/foundation/foundation.js',
+        '/js/foundation/foundation/foundation.js',
         '/js/tail.js'
       ]
 
@@ -51,8 +49,9 @@ module App
         '/css/app.css'
       ]
 
-      js_compression :yui
-      css_compression :yui
+      js_compression  :jsmin
+      css_compression :sass
+      prebuild true
     end
 
     get '/' do
