@@ -2,8 +2,10 @@
 
 require 'slim'
 require 'sinatra'
+require 'compass'
 require 'sinatra/config_file'
 require 'sinatra/assetpack'
+require 'zurb-foundation'
 
 module App
   class Server < Sinatra::Base
@@ -15,19 +17,33 @@ module App
     # Configuration
     config_file 'config/config.yml'
 
+    Compass.configuration do |c|
+      c.project_path     = root
+      c.sass_dir = 'assets/stylesheets'
+      c.images_dir       = 'assets/images'
+      c.http_generated_images_path = '/img'
+      c.add_import_path  'assets/stylesheets'
+    end
+
+    set :scss, Compass.sass_engine_options
+
     # Assets
     assets do
       serve '/js', from: 'assets/javascripts'
+      # We serve foundation specific javascript right from the gem
+      serve '/foundation', from: Foundation.js_path
       serve '/css', from: 'assets/stylesheets'
       serve '/img', from: 'assets/images'
 
       # Javascript placed before the closing <head> tag
       js :head, [
+        '/foundation/vendor/custom.modernizr.js',
         '/js/head.js'
       ]
 
       # Javascript placed before the closing <body> tag
       js :tail, [
+        '/foundation/foundation/foundation.js',
         '/js/tail.js'
       ]
 

@@ -1,5 +1,6 @@
 production: &common_settings
     title: Sinatra Boilerplate
+    description: "A boiler plate Sinatra app with Foundation, Testing and Asset Packaging."
 
 test:
     <<: *common_settings
