@@ -2,21 +2,21 @@
 
 > This is where you can plop your app's documentation :)
 
-##Boiler Plate Documentation
-The below should be universally applicable from the source `sinatra-boilerplate`
+##Sinatra Boilerplate Documentation
+The below should be universally applicable from the original [sinatra-boilerplate](https://github.com/neverstopbuilding/sinatra-boilerplate)
 
-Here is a Sinatra Boilerplate app that will let you get started developing something fast and do it in a clean test driven way. This is a one stop shop.
+Here is a Sinatra Boilerplate app that will let you get started developing something fast and do it in a clean, test-driven way. This is a one stop shop.
 
 ###Features
 - RSpec and Rack::Unit test support with Capybara for web testing.
 - System and Unit tests organized and optimized.
-- Code quality managed by [Rubocop](https://github.com/bbatsov/rubocop)
+- Code quality managed by Rubocop
 - Assets packaged and Minified
 - Unit test coverage and Test reporting built in.
 - Zurb Foundation and Compass support fresh layouts.
-- Slim templating.
+- Slim templates.
 - Simple configuration.
-- Guard for fast development.
+- Guard with Live Reload for fast development.
 - Deploys to Heroku out of the box.
 
 ###Making It Your Own
@@ -26,9 +26,9 @@ Simple:
 1. Clone this repository.
 2. Initialize a new git repository for your project.
 3. Install the dependencies: `bundle install`
-3. Update the contents of `lib/config/config.yml`, `lib/public/humans.txt`, `lib/views/index.slim`, and `spec/system/lib/views/index_spec.rb` to suit your needs.
-4. Run `bundle exec guard` to start the development server and testing features.
-5. Away you go!
+4. Update the contents of `lib/config/config.yml`, `lib/public/humans.txt`, `lib/views/index.slim`, and `spec/system/lib/views/index_spec.rb` to suit your needs.
+5. Run `bundle exec guard` to start the development server and testing features.
+6. Away you go!
 
 ###Slim Templates
 This boilerplate uses [Slim Templates](http://slim-lang.com/) by default they are located in the `lib/views` folder.
@@ -45,12 +45,15 @@ I've included the default full [Zurb Foundation](https://github.com/zurb/foundat
 All of the assets are managed with the [Sinatra Asset Pack](https://github.com/rstacruz/sinatra-assetpack) which is configured in the `lib/app/server.rb` file. Add additional assets or change the configuration here.
 
 ###Configuration
-All of the Sinatra configuration settings can be controlled in the `lib/config/config.yml` file. You can also add in any of your own settings, included are a simple title and description property.
+All of the Sinatra configuration settings can be controlled in the `lib/config/config.yml` file. This is included as part of the[Sinatra::ConfigFile](http://www.sinatrarb.com/contrib/config_file.html) plugin. You can also add in any of your own settings, included are a simple title and description property.
 
 By default the production values are set and any of those you want to over ride in other environments can be easily specified in their respective sections.
 
-###Testing (YOU BETTER BE DOING IT) with RSpec
-By default this boiler plate includes two groups of test: unit and system.
+###Testing (YOU BETTER BE DOING IT)
+By default this boiler plate includes system tests, unit tests, and code quality tests.
+
+####Code Quality
+As part of the Guard watch and the rake task `rake quality` you can run the [Rubocop](https://github.com/bbatsov/rubocop) code quality checker which will throw crazy errors if your code is a mess. Fix these and everyone that interacts with your app will be happier.
 
 ####Unit Testing
 An example and useful `version.rb` file is included to illustrate the unit testing. Simply create your classes under `lib/app` and the associated spec under `spec/unit/lib/app`. To make this easier you can use the [Blam](https://github.com/neverstopbuilding/blam) plugin to create your new class files. For example:
@@ -68,20 +71,17 @@ The end-to-end tests use the default headless html browser that comes with Capyb
 
 Run the system tests with: `rake system`
 
-####Code Quality
-As part of the Guard watch and the rake task `rake quality` you can run the [Rubocop](https://github.com/bbatsov/rubocop) code quality checker which will throw crazy errors if your code is a mess. Fix these and everyone that interacts with your app will be happier.
-
 You can run all of the testing and quality checks manually with: `rake build`
 
-####Deployment
+###Deployment
 I build this to be effortless, here is how to deploy:
 
-`git push heroku master`
+    git push heroku master
 
 Done.
 
 ##Contributing
-I built this because I was about to build a Sinatra app anyway and wanted to share a solid foundation. If you are doing the same, why not start with this, add anything a missed and send a pull request. Pretty soon this could be quite robust and show off the best practices.
+I built this because I was about to build a Sinatra app anyway and wanted to share a solid foundation. If you are doing the same, why not start with this, add anything I missed and send a pull request. Pretty soon this could be quite robust and show off the best practices.
 
 Some things that could use improvement:
 
