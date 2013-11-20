@@ -1,4 +1,4 @@
-group :tests, halt_on_fail: true do
+group :tests do
   # Run code quality checks against all source
   guard :rubocop, all_on_start: false do
     watch(%r{^spec/.+\.rb$})

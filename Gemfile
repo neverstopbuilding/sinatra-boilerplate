@@ -6,9 +6,14 @@ ruby '2.0.0'
 gem 'sinatra'
 gem 'sinatra-contrib', require: %w(sinatra/config_file)
 gem 'thin'
+gem 'slim'
+gem 'sinatra-assetpack'
+gem 'yui-compressor'
+gem 'zurb-foundation'
+gem 'compass'
 
-group :presentation do
-  gem 'slim'
+group :application do
+  # Here should be all the specifics for the application
 end
 
 group :test do
@@ -20,6 +25,7 @@ end
 
 group :development do
   gem 'rake'
+  gem 'guard', '2.2.3'
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'guard-livereload'
