@@ -35,13 +35,13 @@ module App
 
       # Javascript placed before the closing <head> tag
       js :head, [
-        '/js/foundation/vendor/custom.modernizr.js',
+        '/js/vendor/custom.modernizr.js',
         '/js/head.js'
       ]
 
       # Javascript placed before the closing <body> tag
       js :tail, [
-        '/js/foundation/foundation/foundation.js',
+        '/js/foundation/foundation.js',
         '/js/tail.js'
       ]
 
