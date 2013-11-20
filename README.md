@@ -50,7 +50,7 @@ All of the Sinatra configuration settings can be controlled in the `lib/config/c
 By default the production values are set and any of those you want to over ride in other environments can be easily specified in their respective sections.
 
 ###Testing (YOU BETTER BE DOING IT)
-By default this boiler plate includes system tests, unit tests, and code quality tests.
+By default this boilerplate includes system tests, unit tests, and code quality tests.
 
 ####Code Quality
 As part of the Guard watch and the rake task `rake quality` you can run the [Rubocop](https://github.com/bbatsov/rubocop) code quality checker which will throw crazy errors if your code is a mess. Fix these and everyone that interacts with your app will be happier.
@@ -74,7 +74,7 @@ Run the system tests with: `rake system`
 You can run all of the testing and quality checks manually with: `rake build`
 
 ###Deployment
-I build this to be effortless, here is how to deploy:
+I built this to be effortless, here is how to deploy:
 
     git push heroku master
 
