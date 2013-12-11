@@ -7,12 +7,15 @@ require 'sinatra/config_file'
 require 'sinatra/assetpack'
 require 'zurb-foundation'
 
+require 'sinatra/activerecord'
+
 module App
   class Server < Sinatra::Base
     set :root, File.expand_path(File.join(Dir.pwd, 'lib'))
 
     register Sinatra::ConfigFile
     register Sinatra::AssetPack
+    register Sinatra::ActiveRecordExtension
 
     # Configuration
     config_file 'config/config.yml'
@@ -26,6 +29,8 @@ module App
     end
 
     set :scss, Compass.sass_engine_options
+
+    set :database, "sqlite3:///sinatraboilerplate.sqlite3"
 
     # Assets
     assets do

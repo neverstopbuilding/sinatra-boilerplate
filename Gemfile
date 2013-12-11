@@ -11,6 +11,9 @@ gem 'sinatra-assetpack'
 gem 'zurb-foundation'
 gem 'compass'
 
+gem 'sinatra-activerecord'
+gem 'sqlite3'
+
 group :application do
   # Here should be all the specifics for the application
 end

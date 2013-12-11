@@ -2,3 +2,4 @@
 .sass-cache
 build
 Gemfile.lock
+*.sqlite3
